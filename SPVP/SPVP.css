@@ -1,0 +1,204 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, rgb(0, 37, 64), rgb(0, 188, 138) 100%);
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Ensure everything stacks vertically */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 75vh;
+    height: 75vh;
+    margin-bottom: 20px; /* Add some space between the grid and the buttons */
+}
+
+.borders, .bordersB {
+    display: grid;
+    border-radius: 4px;
+    background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    border: 2px solid black;
+}
+.bordersB{
+    border-radius: 20px;
+    margin: 1%;
+}
+
+.bord-1{/* margin: top right bottom left; */
+    border-radius: 5px !important;
+    margin: 4% 2% 2% 4%;
+}
+.bord-2{/* margin: top right bottom left; */
+    border-radius: 5px !important;
+    margin: 4% 2% 2% 2%;
+}
+.bord-3{/* margin: top right bottom left; */
+    border-radius: 5px !important;
+    margin: 4% 4% 2% 2%;
+}
+.bord-4{/* margin: top right bottom left; */
+    border-radius: 5px !important;
+    margin: 2% 2% 2% 4%;
+}
+.bord-5{/* margin: top right bottom left; */
+    border-radius: 5px !important;
+    margin: 2% 2% 2% 2%;
+}
+.bord-6{/* margin: top right bottom left; */
+    border-radius: 5px !important;
+    margin: 2% 4% 2% 2%;
+}
+.bord-7{/* margin: top right bottom left; */
+    border-radius: 5px !important;
+    margin: 2% 2% 4% 4%;
+}
+.bord-8{/* margin: top right bottom left; */
+    border-radius: 5px !important;
+    margin: 2% 2% 4% 2%;
+}
+.bord-9{/* margin: top right bottom left; */
+    border-radius: 5px !important;
+    margin: 2% 4% 4% 2%;
+}
+
+
+.inner1, .inner2, .inner3, .inner4, .inner5, .inner6, .inner7, .inner8, .inner9 {
+    border-radius: 6px;
+    margin: 20px;
+    display: none;
+    border: 2px solid black;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background: linear-gradient(to top, rgb(0, 86, 146), rgb(0, 188, 138));
+}
+
+.X, .O {
+    color: rgb(0, 0, 0);
+    font-size: 4vh; /* Adjust font size as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; /* Ensure proper sizing */
+    overflow: hidden;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    line-height: 1; /* Prevent extra spacing from line-height */
+    border-radius: 1px;
+    
+}
+
+.X, #p1 {
+    background: linear-gradient(to top, rgb(26, 116, 148), rgb(54, 173, 216));
+    color: white;
+    text-shadow: 0px 0px 10px cyan,
+                 0px 0px 20px cyan,
+                 0px 0px 40px cyan,
+                 0px 0px 80px cyan;
+}
+
+.O, #p2 {
+    background: linear-gradient(to top, rgb(158, 17, 64), rgb(220, 56, 110));
+    color: white;
+    text-shadow: 0px 0px 10px rgb(255, 0, 136),
+                 0px 0px 20px rgb(255, 0, 51),
+                 0px 0px 40px rgb(255, 0, 51),
+                 0px 0px 80px rgb(255, 0, 51);
+}
+
+#frame, #frame2, #frame3, #frame4 {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    margin-bottom: 10px; /* Add spacing between button rows */
+    width: 100%; /* Ensure the button rows take the full width */
+}
+
+#reset, #dice, #p1, #p2 {
+    border-radius: 4px;
+    border: 0px;
+    width: 50vh; /* Ensure buttons are half the container width */
+    margin: 5px;
+    text-align: center;
+}
+
+#dice {
+    display: none;
+    background-color: rgb(33, 65, 226);
+    color: white;
+}
+
+#p1, #p2 {
+    display: none;
+    color: rgb(255, 255, 255);
+}
+
+#reset {
+    display: none;
+    background: linear-gradient(to top, rgb(92, 0, 87), rgb(187, 1, 200));
+    color: white;
+    text-shadow: 0px 0px 10px rgb(166, 0, 147),
+                 0px 0px 20px rgb(166, 0, 147),
+                 0px 0px 40px rgb(166, 0, 147),
+                 0px 0px 80px rgb(166, 0, 147);
+    color: white;
+}
+
+#reset:hover, #p1:hover, #p2:hover, #dice:hover {
+    border: 2px solid white;
+}
+
+.reset {
+    background-color: rgb(248, 67, 224) !important;
+    color: white !important;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.disabled {
+    border: 2px solid rgb(255, 0, 0);
+    pointer-events: none;
+    background-color: gray;
+}
+
+.selected .inn {
+    border: 2px solid green;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.dis{
+    display: none;
+}
+
+.finished {
+    pointer-events: none;
+    display: flex !important;
+    font-size: 17vh;
+    border-radius: 18px !important;
+}
+
+.possible {
+    border: 2px solid rgb(0, 179, 255) !important; 
+}
+
+
+

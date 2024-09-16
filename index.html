@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pick.css" class="style">
+</head>
+<body>
+    <div id="outer">
+        <h1>Tic Tac Toe!</h1>
+        <h2>Pick Gamemode!</h2>
+        <div id="box">
+            <div id="frame">
+                <button id="PVE">1 Player</button>
+                <div class="gap"></div>
+                <button id="PVP">2 Players</button>
+                <div class="gap"></div>
+                <button id="SPVP">SUPER</button>
+            </div>
+        </div>
+        
+    </div>
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $("#PVE").click(function(){
+            window.location.href = 'PVE/PVE.html';
+        });
+
+        $("#PVP").click(function(){
+            window.location.href = "PVP/PVP.html"
+        });
+
+        $("#SPVP").click(function(){
+            window.location.href = "SPVP/SPVP.html"
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title1">Click the Button</h1>
+
+      <div class="players">
+        <div class="dice">
+          <p>Player 1</p>
+          <img class="img1" src="images/QuestionB.png" />
+        </div>
+        <div class="dice">
+          <p>Player 2</p>
+          <img class="img2" src= "images/QuestionB.png" />
+        </div>
+
+        <div class="roller">
+          <button>ROLL!</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+
+        $("button").click(function() {
+          roll();  // Call roll function
+        });
+        
+        function generateNumber() {
+          return Math.floor(Math.random() * 6) + 1;
+        }
+    
+        // Function to roll the dice and update the images and result
+        function roll() {
+          // Generate random numbers for both players
+          const randomNum1 = generateNumber();
+          const randomNum2 = generateNumber();
+    
+          // Generate image paths based on random numbers
+          $(".img1, .img2").css("border-radius", "15%");
+          var imgName1 = "images/dice" + randomNum1 + "w.png";
+          var imgName2 = "images/dice" + randomNum2 + ".png";
+    
+          // Log the image names to the console (for debugging)
+          console.log(imgName1);
+          console.log(imgName2);
+    
+          // Update the images for both players
+          var player1 = document.getElementsByClassName('img1')[0];
+          var player2 = document.getElementsByClassName('img2')[0];
+          player1.src = imgName1;
+          player2.src = imgName2;
+    
+          // Update the result title based on the random numbers
+          if (randomNum1 > randomNum2) {
+            $('.title1').text("🚩 Player 1 Wins!");
+          } else if (randomNum1 < randomNum2) {
+            $('.title1').text("Player 2 Wins! 🚩");
+          } else {
+            $('.title1').text("🚩 It's a Draw! 🚩");
+          }
+        }
+      });
+    </script>
+    
+  </body>
+</html>

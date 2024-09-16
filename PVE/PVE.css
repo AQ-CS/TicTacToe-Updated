@@ -1,0 +1,129 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to top, rgb(0, 37, 64), rgb(0, 188, 138));
+}
+
+h1{
+    text-align: center;
+}
+#frame, #frame2{
+    display: flex;
+    justify-content:space-between;
+}
+
+#X, #O, #reset{
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: 0px;
+    margin: 10px;
+}
+
+#X:hover, #O:hover, #reset:hover{
+    border: white 2px solid;
+}
+
+#X{
+    color: white;
+    text-shadow: 0px 0px 10px cyan,
+                 0px 0px 20px cyan,
+                 0px 0px 40px cyan,
+                 0px 0px 80px cyan;
+    background: linear-gradient(to top, rgb(26, 116, 148), rgb(54, 173, 216));
+}
+
+#O{
+    color: white;
+    
+    text-shadow: 0px 0px 10px rgb(255, 255, 255),
+                 0px 0px 20px rgb(255, 0, 51),
+                 0px 0px 40px rgb(255, 255, 255),
+                 0px 0px 80px rgb(255, 0, 51);
+    background: linear-gradient(to top, rgb(158, 17, 64), rgb(220, 56, 110));
+}
+#reset{
+    background-color: rgb(105, 45, 225);
+    color: white;
+}
+
+.reset{
+    background-color: rgb(248, 67, 224) !important;
+    color: white !important;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+#box{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 75vh;
+    height: 75vh;
+}
+
+.borders{
+    border-radius: 20px;
+    margin: 1%;
+    background-color: white;
+    border: 2px solid black;
+    position: relative;
+}
+
+.X{
+    font-size: 10vh;
+    background-color: rgb(127, 221, 255);
+    color: azure;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; 
+    
+}
+
+.O {
+    font-size: 10vh; /* Adjust font size to fill 90% of the container */
+    background-color: rgb(255, 127, 170);
+    color: azure;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; 
+}
+
+.X {
+    background: linear-gradient(to top, rgb(26, 116, 148), rgb(54, 173, 216));
+    color: white;
+    text-shadow: 0px 0px 10px cyan,
+                 0px 0px 20px cyan,
+                 0px 0px 40px cyan,
+                 0px 0px 80px cyan;
+}
+
+.O {
+    background: linear-gradient(to top, rgb(158, 17, 64), rgb(220, 56, 110));
+    color: white;
+    text-shadow: 0px 0px 10px rgb(255, 0, 0),
+                 0px 0px 20px rgb(255, 255, 255),
+                 0px 0px 40px rgb(255, 0, 51),
+                 0px 0px 80px rgb(255, 0, 51);
+}
+
+.picked{
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.75; /* Optional: visually indicate that the element is disabled */
+}
+
